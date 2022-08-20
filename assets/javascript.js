@@ -130,8 +130,8 @@ function abbrState(input, to) {
         ['Wyoming', 'WY'],
     ];
 
-    var ab = "WY"
-    states[ab]
+    //var ab = "WY"
+    //states[ab]
 
     if (to == 'abbr') {
         input = input.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
@@ -319,7 +319,7 @@ $(window).on('resize', function () {
 ////// KGC // POPULATION API QUERY FUNCTION TESTING
 yearNums.forEach(function (year) {
 
-    var popQueryURL = "https://api.census.gov/data/2017/pep/population?get=POP,GEONAME&for=state" + "&DATE=" + year;
+    var popQueryURL = "https://api.census.gov/data/" + year + "/acs/acs5?get=NAME,B01003_001E&for=state"
     $.ajax({
         url: popQueryURL,
         method: "GET"
